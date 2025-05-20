@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = inicio;
+        
+
+        function inicio(){
+            let avaliar = document.getElementById('avaliar');
+            avaliar.addEventListener("click", avaliado)
+        }
+
+        function avaliado(){
+            let valor = document.getElementById('valor');
+            let resultado = document.getElementById('resultado');
+            let x = parseFloat(valor.value);
+
+            if(x >= 6.0){
+                resultado.textContent = "Aprovado";
+            }else{
+                resultado.textContent = "Reprovado";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" id="valor"><br>
+    <input type="button" id="avaliar">
+    <p id="resultado"></p>
+</body>
+</html>

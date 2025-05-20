@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = inicio;
+
+        function inicio(){
+            let calcular = document.getElementById('mostrar')
+            calcular.addEventListener("click", calculo);
+        }
+
+        function calculo(){
+            let mes1 = document.getElementById('mes1');
+            let mes2 = document.getElementById('mes2');
+            let mes3 = document.getElementById('mes3');
+            let Saldo = document.getElementById('saldo');
+            let Taxa = document.getElementById('taxa');
+
+            let saldo = parseFloat(Saldo.value);
+            let taxa = parseFloat(Taxa.value) / 100;
+
+            let calc = saldo * taxa;
+            mes1.textContent = calc;
+
+            calc = saldo * taxa * 2;
+            mes2.textContent = calc;
+
+            calc = saldo * taxa * 3;
+            mes3.textContent = calc;
+            }
+    </script>
+</head>
+<body>
+    <label for="">Saldo:</label>
+    <input type="text" id="saldo"><br>
+    <label for="">Taxa:</label>
+    <input type="text" id="taxa"><br>
+    <input type="button" id="mostrar" value="mostrar">
+    <h3>Resultados:</h3>
+    <p id="mes1"></p>
+    <p id="mes2"></p>
+    <p id="mes3"></p>
+</body>
+</html>

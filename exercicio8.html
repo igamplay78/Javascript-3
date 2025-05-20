@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+    window.onload = inicio;
+
+    function inicio(){
+        let btn = document.getElementById('btn');
+        btn.addEventListener("click", converter)
+    }
+
+    function converter(){
+        let texto = document.getElementById('text');
+        let digitado = texto.value; 
+        let objeto = JSON.parse(digitado);
+
+        
+        let pnome = document.getElementById('nome')
+        pnome.textContent = objeto.nome;
+
+        let pidade = document.getElementById('idade')
+        pidade.textContent = objeto.idade;
+    }
+    </script>
+</head>
+<body>
+    <input type="text" id="text">
+    <input type="button" id="btn" value="converter"><br>
+    <p id="nome"></p>
+    <p id="idade"></p>
+</body>
+</html>
